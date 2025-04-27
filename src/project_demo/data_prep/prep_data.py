@@ -1,14 +1,16 @@
 import pandas as pd
 from sklearn.datasets import load_diabetes
 
-# Load the dataset
-diabetes = load_diabetes()
+def prepare_write_data(write_path):
 
-# Convert to DataFrame
-df = pd.DataFrame(data=diabetes.data, columns=diabetes.feature_names)
+    # Load the dataset
+    diabetes = load_diabetes()
 
-# Add the target column
-df['target'] = diabetes.target
+    # Convert to DataFrame
+    df = pd.DataFrame(data=diabetes.data, columns=diabetes.feature_names)
 
-# Save to Parquet (corrected path)
-df.to_parquet("/Users/juhi/Documents/data/diabetes_dataset.parquet")
+    # Add the target column
+    df['target'] = diabetes.target
+
+    # Save to Parquet (corrected path)
+    df.to_parquet(write_path, index=False)
