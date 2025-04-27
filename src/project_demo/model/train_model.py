@@ -18,8 +18,8 @@ def train_model(file_path, model_path, metrics_path):
     # Load the dataset
     diabetes = read_parquet(file_path)
     # Load the diabetes dataset
-    X = pd.DataFrame(data=diabetes.data, columns=diabetes.feature_names)
-    y = diabetes.target
+    X = diabetes.drop(columns=["target"])
+    y = diabetes["target"]
 
     # Split into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(
