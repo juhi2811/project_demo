@@ -13,7 +13,7 @@ def test_train_model_creates_files(tmp_path):
     prepare_write_data(dataset_path)
 
     # Define paths for model and metrics
-    model_path = tmp_path / "xgboost_model.json"
+    model_path = tmp_path / "xgboost_model.pkl"
     metrics_path = tmp_path / "metrics.json"
 
     # Call train_model
