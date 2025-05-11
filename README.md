@@ -3,7 +3,7 @@ This is a demo project to give a tutorial on how to publish projects using Poetr
 
 ## Installations
 ```bash
-pip install pyenv
+brew install pyenv
 pip install poetry
 ```
 ## Setting up project with Poetry
