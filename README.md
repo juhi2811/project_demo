@@ -58,7 +58,8 @@ pip install project-demo-juhi
 ```
 After installation, you can import the project package as 
 ```python
-import project-demo-juhi
+import project_demo.main as demo_main
+demo_main.run(dataset_path, model_path, metrics_path)
 ```
 
 
