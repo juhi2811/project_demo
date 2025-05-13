@@ -1,6 +1,7 @@
 import argparse
-from data_prep.prep_data import prepare_write_data
-from model.train_model import train_model
+from pathlib import Path
+from .data_prep.prep_data import prepare_write_data
+from .model.train_model import train_model
 
 def parse_args() -> argparse.Namespace:
    parser = argparse.ArgumentParser(description="Project Demo")
@@ -33,6 +34,11 @@ def parse_args() -> argparse.Namespace:
 
 
 def run(dataset_path: str, model_path: str, metrics_path: str) -> None:
+   # Convert string paths to Path objects
+   dataset_path = Path(dataset_path)
+   model_path = Path(model_path)
+   metrics_path = Path(metrics_path)
+
    if dataset_path.exists():
       print(f"Dataset already exists at {dataset_path}")
    else:
